@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ta">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For My Alagii ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==================== WELCOME SCREEN ==================== -->
+    <div class="welcome-screen" id="welcomeScreen">
+
+        <div class="heart">❤️</div>
+
+        <h1>Hi ALAGII! 🥹❤️</h1>
+
+        <p>
+            இந்த surprise<br>
+            உங்களுக்காக மட்டும்... 🌸
+        </p>
+
+        <button onclick="startSurprise()">
+            Open Your Surprise ✨
+        </button>
+
+    </div>
+
+
+    <!-- ==================== FIRST SURPRISE ==================== -->
+    <div class="surprise-screen" id="surpriseScreen" style="display:none;">
+
+        <div class="big-heart">💗</div>
+
+        <h1>அம்மா... ❤️</h1>
+
+        <p>
+            நான் தினமும் சொல்லாமல் இருக்கலாம்...<br><br>
+
+            ஆனால் என் வாழ்க்கையில்<br>
+            நீங்கள் தான் மிக முக்கியமானவர். ❤️
+        </p>
+
+        <button onclick="nextStep()">
+            இன்னும் இருக்கு... 🥹✨
+        </button>
+
+    </div>
+
+
+    <!-- ==================== FUNNY SESSION ==================== -->
+    <div class="funny-screen" id="funnyScreen" style="display:none;">
+
+        <div class="funny-emoji">😂❤️</div>
+
+        <h1>சரி அம்மா... ஒரு சின்ன Test! 😜</h1>
+
+        <p>
+            எங்களைப் பற்றி உங்களுக்கு<br>
+            எவ்வளவு தெரியும் என்று பார்ப்போமா? 👀
+        </p>
+
+        <button onclick="startQuestions()">
+            Test பண்ணலாம் 😜✨
+        </button>
+
+    </div>
+
+
+    <!-- ==================== QUESTION 1 ==================== -->
+    <div class="question-screen" id="question1" style="display:none;">
+
+        <div class="funny-emoji">👀😂</div>
+
+        <h1>Question 1 😜</h1>
+
+        <p>
+            வீட்டுல அதிகமா<br>
+            “அம்மா...” என்று கூப்பிடுவது யார்? 😂❤️
+        </p>
+
+        <button onclick="nextQuestion()">
+            👧🏻 முதல் பொண்ணு
+        </button>
+
+        <button onclick="nextQuestion()">
+            👧🏻 இரண்டாவது பொண்ணு
+        </button>
+
+        <button onclick="nextQuestion()">
+            👧🏻 மூன்றாவது பொண்ணு
+        </button>
+
+    </div>
+
+
+    <!-- ==================== QUESTION 2 ==================== -->
+    <div class="question-screen" id="question2" style="display:none;">
+
+        <div class="funny-emoji">😂🙈</div>
+
+        <h1>Question 2 😜</h1>
+
+        <p>
+            அம்மாவிடம் ஏதாவது வாங்கணும்னா<br>
+            முதலில் செல்லம் போல பேசுவது யார்? 😂❤️
+        </p>
+
+        <button onclick="showQuestion3()">
+            👧🏻 முதல் பொண்ணு
+        </button>
+
+        <button onclick="showQuestion3()">
+            👧🏻 இரண்டாவது பொண்ணு
+        </button>
+
+        <button onclick="showQuestion3()">
+            👧🏻 மூன்றாவது பொண்ணு
+        </button>
+
+    </div>
+
+
+    <!-- ==================== QUESTION 3 ==================== -->
+    <div class="question-screen" id="question3" style="display:none;">
+
+        <div class="funny-emoji">🤣❤️</div>
+
+        <h1>Question 3 😂</h1>
+
+        <p>
+            அம்மாவுக்கு ஒரு secret சொல்லிட்டு<br>
+            “யார்கிட்டயும் சொல்லாதீங்க!” என்று சொல்வது யார்? 🤭❤️
+        </p>
+
+        <button onclick="finishQuestions()">
+            👧🏻 முதல் பொண்ணு
+        </button>
+
+        <button onclick="finishQuestions()">
+            👧🏻 இரண்டாவது பொண்ணு
+        </button>
+
+        <button onclick="finishQuestions()">
+            👧🏻 மூன்றாவது பொண்ணு
+        </button>
+
+    </div>
+
+
+    <!-- ==================== VIDEO SCREEN ==================== -->
+    <div class="video-screen" id="videoScreen" style="display:none;">
+
+        <div class="funny-emoji">🎥❤️</div>
+
+        <h1>
+            அம்மாவுக்கு ஒரு Special Surprise! 🥹❤️
+        </h1>
+
+        <p>
+            இத்தனை நேரம் பார்த்தது எல்லாம்<br>
+            ஒரு சின்ன முன்னோட்டம் தான்... 😜
+        </p>
+
+        <video id="surpriseVideo" controls>
+
+            <source src="amma_video.mp4" type="video/mp4">
+
+            உங்கள் browser இந்த video-வை support செய்யவில்லை.
+
+        </video>
+
+        <p>
+            ❤️ எங்கள் மூன்று பேரின் அன்புடன் ❤️
+        </p>
+
+        <button onclick="goToFinal()">
+            கடைசில இன்னும் ஒன்று இருக்கு... ❤️✨
+        </button>
+
+    </div>
+
+
+    <!-- ==================== FINAL SCREEN ==================== -->
+    <div class="final-screen" id="finalScreen" style="display:none;">
+
+        <div class="big-heart">
+            💖
+        </div>
+
+        <h1>
+            அம்மா... 🥹❤️
+        </h1>
+
+        <p>
+            எங்களுக்காக நீங்கள் செய்த எல்லா விஷயங்களுக்கும்
+            நன்றி சொல்ல ஒரு வார்த்தை மட்டும் போதாது... ❤️
+        </p>
+
+        <p>
+            நாங்கள் எவ்வளவு சண்டை போட்டாலும் 😂<br>
+            எவ்வளவு உங்களை டார்ச்சர் பண்ணினாலும் 😜<br>
+            உங்கள் மேல இருக்கிற அன்பு மட்டும்
+            எப்போதும் மாறாது! ❤️
+        </p>
+
+        <h2>
+            நீங்கள் தான் எங்கள் உலகம்! 🌎❤️
+        </h2>
+
+        <p>
+            — உங்கள் மூன்று மகள்கள் 👧🏻👧🏻👧🏻
+        </p>
+
+        <hr>
+
+        <h2>
+            😂 சரி... கடைசி கேள்வி!
+        </h2>
+
+        <p>
+            அம்மா, இந்த surprise எப்படி இருந்துச்சு? 😜❤️
+        </p>
+
+        <button onclick="showUltimateScreen()">
+            🥹 ரொம்ப நல்லா இருந்துச்சு!
+        </button>
+
+        <button onclick="showUltimateScreen()">
+            😂 இன்னும் நல்லா பண்ணியிருக்கலாம்
+        </button>
+
+        <button onclick="showUltimateScreen()">
+            ❤️ என் பொண்ணுங்க தான் Best!
+        </button>
+
+    </div>
+
+
+    <!-- ==================== ULTIMATE EMOTIONAL SCREEN ==================== -->
+    <div class="ultimate-screen" id="ultimateScreen" style="display:none;">
+
+        <!-- Dark Background -->
+        <div class="dark-overlay"></div>
+
+
+        <!-- Emotional Message -->
+        <div class="ultimate-message">
+
+            <div class="ultimate-heart">
+                🥹❤️
+            </div>
+
+            <p>
+                அம்மா…<br><br>
+
+                நான் உங்களை எவ்வளவு நேசிக்கிறேன் என்பதை<br>
+                வார்த்தைகளால் முழுமையாக சொல்ல முடியாது.<br><br>
+
+                நீங்கள் என் அம்மா என்பதே<br>
+                என் வாழ்க்கையின் மிகப்பெரிய வரம். ❤️
+            </p>
+
+        </div>
+
+
+        <!-- Flowers & Hearts Animation -->
+        <div class="flowers-hearts">
+
+            <span>🌸</span>
+            <span>❤️</span>
+            <span>🌹</span>
+            <span>💗</span>
+            <span>🌷</span>
+            <span>💕</span>
+            <span>🌺</span>
+            <span>💖</span>
+            <span>🌸</span>
+            <span>💞</span>
+            <span>🌹</span>
+            <span>❤️</span>
+            <span>🌷</span>
+            <span>💗</span>
+
+        </div>
+
+
+        <!-- Last Message -->
+        <div class="forever-message">
+
+            <h1>
+                என்றும் உங்கள் குழந்தை ❤️
+            </h1>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

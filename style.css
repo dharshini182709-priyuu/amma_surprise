@@ -1,0 +1,476 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffd6e7, #fff0f6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: auto;
+}
+
+/* =========================
+   WELCOME SCREEN
+   ========================= */
+
+.welcome-screen {
+    background: rgba(255, 255, 255, 0.92);
+    padding: 50px 35px;
+    border-radius: 30px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 1.2s ease;
+}
+
+.heart {
+    font-size: 70px;
+    animation: heartbeat 1.2s infinite;
+}
+
+h1 {
+    color: #d6336c;
+    font-size: 42px;
+    margin: 20px 0;
+}
+
+p {
+    color: #555;
+    font-size: 22px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+button {
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: #e75480;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    background: #d6336c;
+}
+
+/* =========================
+   SURPRISE SCREEN
+   ========================= */
+
+.surprise-screen {
+    display: none;
+    background: rgba(255, 255, 255, 0.94);
+    padding: 50px 35px;
+    border-radius: 30px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 1.2s ease;
+}
+
+.big-heart {
+    font-size: 75px;
+    animation: heartbeat 1.2s infinite;
+}
+
+.surprise-screen h1 {
+    margin-bottom: 25px;
+}
+
+.surprise-screen p {
+    font-size: 23px;
+}
+
+/* =========================
+   FUNNY SCREEN
+   ========================= */
+
+.funny-screen {
+    display: none;
+    background: rgba(255, 255, 255, 0.94);
+    padding: 50px 35px;
+    border-radius: 30px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 1.2s ease;
+}
+
+.funny-emoji {
+    font-size: 65px;
+    margin-bottom: 15px;
+    animation: bounce 1.2s infinite;
+}
+
+.funny-screen h1 {
+    color: #d6336c;
+    font-size: 34px;
+    margin-bottom: 25px;
+}
+
+.funny-screen p {
+    color: #555;
+    font-size: 21px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   QUESTION SCREEN
+   ========================= */
+
+.question-screen {
+    display: none;
+    background: rgba(255, 255, 255, 0.94);
+    padding: 50px 35px;
+    border-radius: 30px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 1.2s ease;
+}
+
+.question-screen h1 {
+    color: #d6336c;
+    font-size: 34px;
+    margin-bottom: 25px;
+}
+
+.question-screen p {
+    color: #555;
+    font-size: 22px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.question-screen button {
+    display: block;
+    margin: 12px auto;
+    min-width: 280px;
+}
+
+/* =========================
+   VIDEO SCREEN
+   ========================= */
+
+.video-screen {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    z-index: 9998;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Video */
+
+.video-screen video {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    object-fit: contain;
+    background: #000;
+}
+
+/* =========================
+   VIDEO TEXT
+   ========================= */
+
+.video-text {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    text-align: center;
+    z-index: 10;
+    color: white;
+}
+
+.video-text h1 {
+    color: white;
+}
+
+.video-text p {
+    color: white;
+}
+
+/* =========================
+   ULTIMATE SCREEN
+   ========================= */
+
+.ultimate-screen {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    z-index: 9999;
+    overflow: hidden;
+    text-align: center;
+}
+
+.dark-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+}
+
+.ultimate-message {
+    position: relative;
+    z-index: 3;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 25px;
+    color: white;
+    opacity: 0;
+    animation: messageAppear 3s ease forwards;
+}
+
+.ultimate-heart {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.ultimate-message p {
+    font-size: 22px;
+    line-height: 1.8;
+    color: white;
+}
+
+.forever-message {
+    position: absolute;
+    z-index: 5;
+    bottom: 12%;
+    width: 100%;
+    color: white;
+    opacity: 0;
+    animation: foreverAppear 2s ease forwards;
+    animation-delay: 5s;
+}
+
+.forever-message h1 {
+    font-size: 28px;
+    color: white;
+}
+
+.flowers-hearts span {
+    position: absolute;
+    bottom: -60px;
+    font-size: 30px;
+    animation: floatUp 6s linear infinite;
+}
+
+/* Different positions */
+
+.flowers-hearts span:nth-child(1) {
+    left: 5%;
+    animation-delay: 1s;
+}
+
+.flowers-hearts span:nth-child(2) {
+    left: 12%;
+    animation-delay: 2s;
+}
+
+.flowers-hearts span:nth-child(3) {
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.flowers-hearts span:nth-child(4) {
+    left: 28%;
+    animation-delay: 3s;
+}
+
+.flowers-hearts span:nth-child(5) {
+    left: 36%;
+    animation-delay: 1.5s;
+}
+
+.flowers-hearts span:nth-child(6) {
+    left: 44%;
+    animation-delay: 2.5s;
+}
+
+.flowers-hearts span:nth-child(7) {
+    left: 52%;
+    animation-delay: 0.5s;
+}
+
+.flowers-hearts span:nth-child(8) {
+    left: 60%;
+    animation-delay: 3.5s;
+}
+
+.flowers-hearts span:nth-child(9) {
+    left: 68%;
+    animation-delay: 1s;
+}
+
+.flowers-hearts span:nth-child(10) {
+    left: 76%;
+    animation-delay: 2s;
+}
+
+.flowers-hearts span:nth-child(11) {
+    left: 84%;
+    animation-delay: 0.5s;
+}
+
+.flowers-hearts span:nth-child(12) {
+    left: 90%;
+    animation-delay: 3s;
+}
+
+.flowers-hearts span:nth-child(13) {
+    left: 25%;
+    animation-delay: 4s;
+}
+
+.flowers-hearts span:nth-child(14) {
+    left: 70%;
+    animation-delay: 4.5s;
+}
+
+/* =========================
+   ANIMATIONS
+   ========================= */
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes messageAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-40%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes foreverAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes floatUp {
+    0% {
+        bottom: -60px;
+        transform: translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateX(30px) rotate(180deg);
+    }
+
+    100% {
+        bottom: 110%;
+        transform: translateX(-30px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    .video-screen video {
+        width: 100vw;
+        height: 100vh;
+        object-fit: contain;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    p {
+        font-size: 19px;
+    }
+
+    .welcome-screen,
+    .surprise-screen,
+    .funny-screen,
+    .question-screen {
+        padding: 35px 22px;
+    }
+
+    .question-screen button {
+        min-width: 230px;
+    }
+
+    .video-text {
+        bottom: 20px;
+        width: 90%;
+    }
+}
