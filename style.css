@@ -179,6 +179,18 @@ button:hover {
     justify-content: center;
 }
 
+.video-screen video {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    object-fit: contain;
+    background: #000;
+}
 
 /* =========================
    VIDEO TEXT
