@@ -474,3 +474,41 @@ button:hover {
         width: 90%;
     }
 }
+/* =========================
+   RESPONSIVE VIDEO FIX
+   ========================= */
+
+/* Mobile (already good, just keep full screen) */
+@media (max-width: 600px) {
+  .video-screen video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+  }
+}
+
+/* Laptop / Desktop */
+@media (min-width: 601px) {
+  .video-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+  }
+
+  .video-screen video {
+    width: 70%;   /* adjust size */
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+  }
+
+  .video-text {
+    position: relative;
+    margin-top: 20px;
+    transform: none;
+    left: auto;
+    bottom: auto;
+    text-align: center;
+  }
+}
